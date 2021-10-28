@@ -13,6 +13,13 @@ current_git_branch() {
 
 PROMPT="%d %{$fg[green]%}\$(current_git_branch) %{$reset_color%}"$'\n'"> "
 
+# general #
+###########
+function mkcd() {
+  mkdir -p $1
+  cd $1
+}
+
 # nvm #
 #######
 export NVM_DIR="$HOME/.nvm"
