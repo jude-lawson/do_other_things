@@ -36,7 +36,7 @@ nnoremap <Down> :res -5<CR>
 nnoremap <Left> :vertical resize -5<CR>
 nnoremap <Right> :vertical resize +5<CR>
 
-" ============================== Coc Configuration ==============================
+" ============================== CoC Configuration ==============================
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
@@ -46,6 +46,7 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
 
+" if in a project using eslint, tell CoC to use it
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
@@ -94,4 +95,4 @@ set smarttab                    " sets tabstop when using <Tab> at the beginning
 colorscheme onedark
 
 " greeting
-echo 'Hello! (>^.^<)'
+echo 'Nice work, NVIM init loaded (>^.^<)'
