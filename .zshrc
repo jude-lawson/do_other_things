@@ -133,6 +133,6 @@ alias rr="cargo run"
 
 eval "$(rbenv init -)"
 
-echo "ZSHRC Reloaded"
+echo "Hello! (>^.^<)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
