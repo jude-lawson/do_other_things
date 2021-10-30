@@ -93,6 +93,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " make <CR> auto-select first completion item / format on select
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Display code actions for current buffer
+nnoremap <Leader>ac <Plug>(coc-codeaction)
 " ============================== MISCELLANEOUS ==============================
 syntax on
 set number                      " enables line numbers
