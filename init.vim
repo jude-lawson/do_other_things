@@ -10,6 +10,15 @@ Plug 'tpope/vim-surround'
 
 " coc completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" syntax highlighting
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typesript' }
+
+" prettier
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 set termguicolors
