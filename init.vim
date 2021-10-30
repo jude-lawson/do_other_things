@@ -7,6 +7,7 @@ Plug 'joshdick/onedark.vim'
 
 " editing utilities
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 " coc completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -89,6 +90,12 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" I'm not yet sure what this function does, but CoC requires it
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
 " make <CR> auto-select first completion item / format on select
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
