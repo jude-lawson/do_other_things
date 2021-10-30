@@ -5,6 +5,12 @@ Plug 'junegunn/fzf.vim'
 " colorscheme
 Plug 'joshdick/onedark.vim'
 
+" statusline
+Plug 'itchyny/lightline.vim'
+
+" git
+Plug 'tpope/vim-fugitive'
+
 " editing utilities
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -23,6 +29,24 @@ Plug 'prettier/vim-prettier', {
 call plug#end()
 
 set termguicolors
+
+" ============================== STATUSLINE ==============================
+" no duplicate status mode (Ex. '--INSERT--')
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'codecat' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ 'component': {
+      \   'codecat': '(>^.^<)'
+      \ },
+      \ }
 
 " ============================== MAPPINGS ==============================
 " make commanding vim easier
