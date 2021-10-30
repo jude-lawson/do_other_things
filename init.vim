@@ -70,6 +70,8 @@ nnoremap <Down> :res -5<CR>
 nnoremap <Left> :vertical resize -5<CR>
 nnoremap <Right> :vertical resize +5<CR>
 
+" this is a test comment
+
 " ============================== CoC Configuration ==============================
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
