@@ -1,5 +1,3 @@
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore "node_modules" -g ""'
-
 export PATH="$HOME/.rbenv/path:$PATH"
 eval "$(rbenv init -)"
 
@@ -100,7 +98,7 @@ function cd() {
 
 function new() {
   touch $1
-  code $1
+  nvim $1
 }
 
 function exreset() {
@@ -110,7 +108,6 @@ function exreset() {
   mix run priv/repo/seeds.exs
 }
 
-alias p='vim $(fzf)'
 function f() {
   ag $1 ./ | fzf
 }
@@ -124,7 +121,7 @@ function h() {
 
 alias be="bundle exec"
 alias spec="bundle exec rspec"
-alias t="bundle exec rspec"
+alias rt="bundle exec rspec"
 alias routes="rails routes --expanded -c"
 alias rlint="bundle exec rubocop"
 alias rs="bin/rails s"
@@ -137,6 +134,9 @@ alias migrate='bin/rails db:migrate'
 # Rust #
 ########
 alias rr="cargo run"
+
+# conclusion #
+##############
 
 eval "$(rbenv init -)"
 
