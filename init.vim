@@ -15,9 +15,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-" coc completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " syntax highlighting
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typesript' }
@@ -26,27 +23,40 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typesript' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+" rose-pine theme
+Plug 'rose-pine/neovim'
+
+" Fuzzy stuff
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+lua <<EOF
+print ('hello from lua')
+EOF
+
 set termguicolors
+
+" ============================== LUA ==============================
+command! Scratch lua require'tools'.makeScratch()
 
 " ============================== STATUSLINE ==============================
 " no duplicate status mode (Ex. '--INSERT--')
 set noshowmode
 
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'codecat' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ 'component': {
-      \   'codecat': '(>^.^<)'
-      \ },
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'one',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'codecat' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'FugitiveHead'
+"       \ },
+"       \ 'component': {
+"       \   'codecat': '(>^.^<)'
+"       \ },
+"       \ }
 
 " ============================== MAPPINGS ==============================
 " make commanding vim easier
@@ -69,21 +79,6 @@ nnoremap <Up> :res +5<CR>
 nnoremap <Down> :res -5<CR>
 nnoremap <Left> :vertical resize -5<CR>
 nnoremap <Right> :vertical resize +5<CR>
-
-" ============================== CoC Configuration ==============================
-let g:coc_global_extensions = [
-  \ 'coc-tsserver'
-  \ ]
-
-" if in a project using prettier, tell CoC to use it
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-" if in a project using eslint, tell CoC to use it
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
 
 " apparently TextEdit can sometimes fail unless hidden is set
 set hidden
@@ -135,7 +130,8 @@ set nohlsearch                  " disables highlighting search results
 set expandtab                   " use spaces instead of tabs
 set tabstop=2 shiftwidth=2      " set <Tab> to two spaces
 set smarttab                    " sets tabstop when using <Tab> at the beginning of a line
-colorscheme onedark
+colorscheme rose-pine
+set background=dark
 
 " greeting
 echo 'Nice work, NVIM init loaded (>^.^<)'
