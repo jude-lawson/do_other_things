@@ -17,6 +17,8 @@ function mkcd() {
   mkdir -p $1
   cd $1
 }
+alias workshop='cd ~/workshop'
+alias dot='cd ~/workshop/do_other_things'
 
 # nvm #
 #######
