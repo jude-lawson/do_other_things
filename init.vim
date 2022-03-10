@@ -2,9 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" colorscheme
-Plug 'joshdick/onedark.vim'
-
 " statusline
 Plug 'itchyny/lightline.vim'
 
@@ -36,27 +33,10 @@ print ('hello from lua')
 EOF
 
 set termguicolors
-
-" ============================== LUA ==============================
-command! Scratch lua require'tools'.makeScratch()
-
+"
 " ============================== STATUSLINE ==============================
 " no duplicate status mode (Ex. '--INSERT--')
 set noshowmode
-
-" let g:lightline = {
-"       \ 'colorscheme': 'one',
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'codecat' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'FugitiveHead'
-"       \ },
-"       \ 'component': {
-"       \   'codecat': '(>^.^<)'
-"       \ },
-"       \ }
 
 " ============================== MAPPINGS ==============================
 " make commanding vim easier
@@ -89,39 +69,7 @@ set nowritebackup
 
 " make space ofr diagnostics in column
 set signcolumn=number
-
-" navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-imnplementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> <Leader>gdl :call CocAction('jumpDefinition', 'vsplit')<CR>
-nnoremap <silent> <Leader>gdj :call CocAction('jumpDefinition', 'split')<CR>
-nnoremap <silent> gh :call CocActionAsync('doHover')<CR>
-
-" use TAB to trigger completion
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" I'm not yet sure what this function does, but CoC requires it
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
-" make <CR> auto-select first completion item / format on select
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Display code actions for current buffer
-nnoremap <Leader>ac <Plug>(coc-codeaction)
+"
 " ============================== MISCELLANEOUS ==============================
 syntax on
 set number                      " enables line numbers
