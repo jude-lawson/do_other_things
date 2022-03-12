@@ -24,12 +24,16 @@ Plug 'prettier/vim-prettier', {
 " rose-pine theme
 Plug 'rose-pine/neovim'
 
-" Fuzzy stuff
+" Fuzzy stuff (Telescope)
 Plug 'nvim-telescope/telescope.nvim'
+" Dependency for telescope, like lodash for lua I think
+Plug 'nvim-lua/plenary.nvim'
+" Telescope file browser
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 call plug#end()
 
 lua <<EOF
-print ('hello from lua')
+require('telescope').load_extension 'file_browser'
 EOF
 
 set termguicolors
