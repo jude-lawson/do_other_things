@@ -8,7 +8,11 @@ end
 nmap{'<leader>lc', ':source $HOME/.config/nvim/init.lua<cr>'}
 
 -- Finding files
-nmap{'<leader>ff', ':Telescope find_files<cr>'}
+nmap{'<leader>ff', ':Telescope find_files hidden=true<cr>'}
+nmap{'<leader>zs', ':Telescope git_status<cr>'}
+
+-- Code actions
+nmap{'<leader>ca', ':Telescope lsp_code_actions'}
 
 -- easier commanding
 nmap{';', ':'}
