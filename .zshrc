@@ -62,7 +62,7 @@ function add() {
   if [ $1 ]; then
     git add $1 ;
   else
-    git ls-files -m | fzf | xargs git add ;
+    git ls-files --others --exclude-standard | fzf | xargs git add ;
   fi
   git status
 }
