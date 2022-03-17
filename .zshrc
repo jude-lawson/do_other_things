@@ -91,7 +91,7 @@ alias edit='vim `find . | fzf`'
 alias editzsh="nvim ~/.zshrc"
 alias loadzsh="source ~/.zshrc"
 alias l="loadzsh"
-alias editvconf='nvim ~/.config/nvim/init.vim'
+alias editvconf='nvim ~/.config/nvim/init.lua'
 
 function cd() {
   builtin cd $1
