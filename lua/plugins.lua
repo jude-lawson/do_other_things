@@ -25,6 +25,16 @@ require('packer').startup(function()
     ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
   }
 
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+
+  -- snippets
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+
   -- syntax highlighting
   use{'pangloss/vim-javascript', ft = 'javascript'}
   use{'leafgarland/typescript-vim', ft = 'typesript'}
@@ -32,4 +42,16 @@ require('packer').startup(function()
   -- editing utilities
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
+
+  -- LSP Config
+  use {
+    'williamboman/nvim-lsp-installer',
+    'neovim/nvim-lspconfig',
+  }
+
+  -- catpuccin theme
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
 end)
