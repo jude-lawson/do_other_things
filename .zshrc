@@ -1,4 +1,5 @@
 export PATH="$HOME/.rbenv/path:$PATH"
+eval "$(fnm env --use-on-cd)"
 eval "$(rbenv init -)"
 
 setopt promptsubst
