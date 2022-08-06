@@ -3,12 +3,17 @@ local function nmap(params)
   setmetatable(params, {__index={noremap=true}})
   set_keymap('n', params[1], params[2], {noremap = params.noremap})
 end
+local function vmap(params)
+  setmetatable(params, {__index={noremap=true}})
+  set_keymap('v', params[1], params[2], {noremap = params.noremap})
+end
 
 -- General
-nmap{'<leader>lc', ':source $HOME/.config/nvim/init.lua<cr>'}
+nmap{'<leader>lc', ':luafile $HOME/.config/nvim/init.lua<cr>'}
 
 -- Finding files
 nmap{'<leader>ff', ':Telescope find_files hidden=true<cr>'}
+nmap{'<leader>fg', ':Telescope live_grep<cr>'}
 nmap{'<leader>zs', ':Telescope git_status<cr>'}
 
 -- Code actions
@@ -17,8 +22,8 @@ nmap{'<leader>ca', ':Telescope lsp_code_actions'}
 -- easier commanding
 nmap{';', ':'}
 nmap{'<leader>;', ';'}
-nmap{';', ':'}
-nmap{'<leader>;', ';'}
+vmap{';', ':'}
+vmap{'<leader>;', ';'}
 
 -- easy window navigation
 nmap{'<C-H>', '<C-W><C-H>'}
@@ -31,6 +36,9 @@ nmap{'<Up>', ':res +5'}
 nmap{'<Down>', ':res -5'}
 nmap{'<Left>', ':vertical resize +5'}
 nmap{'<Right>', ':vertical resize -5'}
+
+-- git
+nmap{'<leader>gc', ':Git commit -m '}
 
 -- End statement
 print('Maps loaded.')
