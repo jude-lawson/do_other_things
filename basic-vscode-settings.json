@@ -1,0 +1,164 @@
+{
+  "[rust]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "files.autoSave": "onFocusChange",
+  "workbench.panel.defaultLocation": "right",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<leader>:"],
+      "after": [";"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "r"],
+      "after": ["g", "T"]
+    },
+    {
+      "before": ["<leader>", "r", "t"],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": ["Run Integration Test"]
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "c", "t"],
+      "commands": [
+        { "command": "workbench.action.tasks.runTask", "args": ["Check Types"] }
+      ]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "0", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "]"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.action.terminal.focus"]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<leader>:"],
+      "after": [";"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "after": ["h", "f", "{", "%"]
+    },
+    {
+      "before": ["<leader>", "]"],
+      "after": ["y", "g", "v", "<esc>", "p"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "after": ["y", "<S-p>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "0", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    }
+  ],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "terminal.external.osxExec": "Warp.app",
+  "background.windowBackgrounds": [
+    "/Users/jude/Downloads/taiga-forest-river.jpg"
+  ],
+  "workbench.iconTheme": "vscode-icons",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "css.validate": false
+}

@@ -1,0 +1,130 @@
+{
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<leader>:"],
+      "after": [";"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "r"],
+      "after": ["g", "T"]
+    },
+    {
+      "before": ["<leader>", "r", "t"],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": ["Run Integration Test"]
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "c", "t"],
+      "commands": [
+        { "command": "workbench.action.tasks.runTask", "args": ["Check Types"] }
+      ]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "0", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "]"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusPreviousGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.action.terminal.focus"]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<leader>:"],
+      "after": [";"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "after": ["h", "f", "{", "%"]
+    },
+    {
+      "before": ["<leader>", "]"],
+      "after": ["y", "g", "v", "<esc>", "p"]
+    },
+    {
+      "before": ["<leader>", "["],
+      "after": ["y", "<S-p>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "k"],
+      "after": ["1", "0", "k"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    }
+  ]
+}
