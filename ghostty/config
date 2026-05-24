@@ -1,0 +1,5 @@
+theme = dark:Carbonfox, light:Dawnfox
+
+background-opacity = 0.8
+background-blur = true
+
